@@ -1,0 +1,45 @@
+.link-products {
+    background-color: #2e2e2e;
+}
+.navbar-link-product{
+    color: darkgray !important;
+    transition: all 0.25s ease-in-out;
+    font-size: 12px !important;
+}
+.navbar-link-product:hover {
+    color: #fff !important;
+}
+
+.main-navbar {
+    background-color: #222;
+    color: white !important;
+    min-height: 100px !important;
+}
+.navbar-item {
+    min-height: 30px;
+    background-color: #222;
+}
+.nav-header {
+    text-transform: uppercase;
+    font-size: 18px !important;
+    margin-top: -10px !important;
+    color: white !important;
+    opacity: 1;
+    transition: 0.25s;
+    font-weight: 500;
+    margin-right: 10px !important;
+}
+.nav-header:hover {
+    opacity: .7;
+}
+
+#input-search-navbar {
+    opacity: 0;
+    transition: all 0.25s;
+    width: 0px;
+}
+
+#input-search-navbar.active {
+    width: 100%;
+    opacity: 1;
+}

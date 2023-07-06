@@ -1,0 +1,16 @@
+{
+    "name": "thinkpad/omt",
+    "description": "OMT Project",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Thinkpad\\Omt\\": "src/"
+        }
+    },
+    "require": {
+        "ext-pdo": "*",
+        "ext-http": "*",
+        "ext-json": "*"
+    }
+}
