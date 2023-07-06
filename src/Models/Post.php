@@ -36,13 +36,26 @@ class Post extends DB
 
     }
 
+    public function updatePost($data, $id) {
+        if($this->getOnePost($id)) {
+        $sql = 'UPDATE posts SET title = :title, content = :content WHERE id =' .$id ;
+        if (!(empty($data['title'] || empty($data['content'])))) {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute([
+                ':title' => $data['title'],
+                ':content' => $data['content'],
+            ]);
+        }
+        }
+    }
+
     public function deletePost($id){
         if ($this->getOnePost($id)) {
             $sql = "DELETE FROM $this->table WHERE id = $id";
             $statement = $this->pdo->prepare($sql);
             $statement->execute();
         }else {
-            loadView('User/design/Post/index.php', ['error' =>'Không có sản phẩm này']);
+            loadView('Admin/design/Post/index.php', ['error' =>'Không có sản phẩm này']);
         }
     }
 

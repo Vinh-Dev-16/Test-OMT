@@ -9,8 +9,8 @@
     <div class="container">
         <nav aria-label="breadcrumb ml-2">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="index.php">Post</a></li>
+                <li class="breadcrumb-item"><a href="http://localhost/omt/User/home/home">Home</a></li>
+                <li class="breadcrumb-item"><a href="index">Post</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Create Post</li>
             </ol>
         </nav>
@@ -22,7 +22,7 @@
                 ?>
                     <h3 class="alert alert-danger text-center"><?php echo $error?></h3>
                 <?php endif; ?>
-                <form method="post" action="store">
+                <form method="post" action="http://localhost/omt/Admin/post/store">
                     <div class="form-group my-2">
                         <label for="exampleInputTitle">Tiêu đề bài đăng</label>
                         <input type="text" class="form-control" id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Viết tiêu đề " name="title">

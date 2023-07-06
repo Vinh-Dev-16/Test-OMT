@@ -29,7 +29,7 @@
         <?php endif; ?>
 
 
-        <a href="http://localhost/omt/User/post/create"> Tạo mới bài đăng</a>
+        <a href="http://localhost/omt/Admin/post/create"> Tạo mới bài đăng</a>
         <table class="table table-striped">
         <thead>
         <tr>
@@ -44,10 +44,11 @@
         <tr>
             <th scope="row"><?php echo $post->id ?></th>
             <td><?php echo $post->title ?></td>
-            <td><?php echo $post->content ?></td>
+            <td><?php echo mb_substr($post->content , 0,30)  ?></td>
             <td>
-
-                <a href="<?php echo 'http://localhost/omt/User/post/delete/'.$post->id ?>">Xóa</a>
+                <a href="<?php echo 'http://localhost/omt/Admin/post/edit/'.$post->id ?>">Sửa</a>
+                <br>
+                <a href="<?php echo 'http://localhost/omt/Admin/post/delete/'.$post->id ?>">Xóa</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -57,5 +58,5 @@
 
 
 <!--    CDN boostrap-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 </body>
