@@ -1,17 +1,16 @@
 
-<head>
+<?php
+    include VIEW.'User/layout.php';
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" >
-    <title>Edit Post</title>
-</head>
+    const link_CSS = '';
+?>
 
-<body>
 <br>
 <div class="container">
     <nav aria-label="breadcrumb ml-2">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="http://localhost/omt/User/home/home">Home</a></li>
-            <li class="breadcrumb-item"><a href="index.php">Post</a></li>
+            <li class="breadcrumb-item"><a href="<?php url('User/home/home'); ?>">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?php url('Admin/post/index'); ?>">Post</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit Post</li>
         </ol>
     </nav>
@@ -49,5 +48,3 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" ></script>
-</body>

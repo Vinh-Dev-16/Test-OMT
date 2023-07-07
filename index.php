@@ -2,27 +2,18 @@
 
 
 require_once __DIR__ . '/vendor/autoload.php';
-function loadView($path, $params)
-{
-    extract($params);
-    require_once 'src/Views/' . $path;
-}
+
+const DS = DIRECTORY_SEPARATOR;
+const ROOT_PATH = __DIR__ . DS;
+const SRC = ROOT_PATH . 'src' . DS;
+const CONTROLLER = SRC . 'Controllers' . DS;
+const CONFIG = SRC . 'Config' . DS;
+const HELPER = SRC . 'Helpers' . DS;
+const MODEL = SRC . 'Models' . DS;
+const PUBLIC_SRC = SRC . 'Public' . DS;
+const VIEW = SRC . 'Views' . DS;
 
 
-function view( $path)
-{
-    require_once 'src/Views/' . $path;
-}
+require_once (HELPER.'UrlHelper.php');
+require_once (CONFIG. 'Config.php');
 
-if (isset($_GET['ct'])) {
-    $ct = $_GET['ct'];
-    $ctArr = explode('/', $ct);
-    $className = 'Thinkpad\Omt\Controllers\\' . ucfirst($ctArr[0]) .'\\' . ucfirst($ctArr[1]) . 'Controller';
-    $objOfController = new $className;
-
-    if (empty($ctArr[3])){
-        $objOfController->{$ctArr[2]}();
-    }else {
-        $objOfController->{$ctArr[2]}($ctArr[3]);
-    }
-}

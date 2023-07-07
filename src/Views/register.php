@@ -86,7 +86,12 @@
                                     </div>
 
                                 </form>
-
+                                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                    <span>Bạn đã có tài khoản?</span>
+                                    <span class="ms-2">
+                                      <a href="<?php url('User/auth/login'); ?>">Đăng nhập</a>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 

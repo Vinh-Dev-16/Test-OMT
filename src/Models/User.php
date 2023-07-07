@@ -41,23 +41,25 @@ class User extends DB
             $resultEmail->execute();
             if($resultEmail > 0){
                 loadView('register.php', ['email' => "Đã trùng email"]);
+            }else {
+                $sql = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
+                $statement = $this->pdo->prepare($sql);
+                $statement->execute(
+                    [
+                        ':name' => $data['name'],
+                        ':email' => $data['email'],
+                        ':password' => md5($data['password']),
+                    ]
+                );
+//                $success = "Đã đăng kí thành công";
+//                redirect('User/auth/login' , compact('success'));
             }
+
+
+
             }catch (PDOException $e){
                 echo $e->getMessage();
             }
-
-
-        if (empty($data['name']) || empty($data['email']) || empty($data['password']) || empty($data['rePassword'])) {
-            loadView('register.php', ['error' => 'Không được để trống trường nào']);
-        }
-        echo $data['password'];
-        if (strlen($data['password'])  < 8 ) {
-            loadView('register.php', ['password' => "Mật khẩu phải lớn hơn 8"]);
-        }
-        if(strcmp($data['password'], $data['rePassword']) > 0) {
-            loadView('register.php', ['password' => "Hai mật khẩu phải trùng nhau"]);
-        }
-
 
         }catch (PDOException $e) {
             $this->pdo->rollBack();

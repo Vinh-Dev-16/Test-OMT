@@ -1,7 +1,4 @@
-<?php
 
-
-?>
 
 <header>
     <link rel="stylesheet" href="../../../../public/CSS/style.css">
@@ -16,10 +13,17 @@
         <!--  Message success      -->
 
         <?php
-        if(isset($success)):
+        if(isset($_SESSION['message'])):
+
             ?>
-            <h3 class="alert alert-success text-center"><?php echo $success?></h3>
-        <?php endif; ?>
+            <h3 class="alert alert-success text-center"><?php echo $_SESSION['message']?></h3>
+        <?php
+            endif;
+
+        session_unset();
+
+        session_destroy();
+        ?>
 
         <!--  Message error      -->
         <?php
@@ -29,7 +33,7 @@
         <?php endif; ?>
 
 
-        <a href="http://localhost/omt/Admin/post/create"> Tạo mới bài đăng</a>
+        <a href="<?php url('Admin/post/create'); ?>"> Tạo mới bài đăng</a>
         <table class="table table-striped">
         <thead>
         <tr>
@@ -46,9 +50,9 @@
             <td><?php echo $post->title ?></td>
             <td><?php echo mb_substr($post->content , 0,30)  ?></td>
             <td>
-                <a href="<?php echo 'http://localhost/omt/Admin/post/edit/'.$post->id ?>">Sửa</a>
+                <a href="<?php url('Admin/post/edit/' . $post->id); ?>">Sửa</a>
                 <br>
-                <a href="<?php echo 'http://localhost/omt/Admin/post/delete/'.$post->id ?>">Xóa</a>
+                <a href="<?php url('Admin/post/delete/' . $post->id) ; ?>">Xóa</a>
             </td>
         </tr>
         <?php endforeach; ?>

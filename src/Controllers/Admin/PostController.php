@@ -36,13 +36,13 @@
                  $db = new Post();
                  try {
                      $db->insertPost($data);
-                     $posts = $db->getPost();
                      $success = 'Đã thêm bài thành công';
 
-                     loadView('Admin/design/Post/index.php', compact('posts' , ['success'=> 'success']));
+                     redirect('Admin/post/index', compact( 'success' ));
 
                  }catch (Exception $e) {
-                     loadView('Admin/design/Post/create.php', ['error'=>$e->getMessage()]);
+                     $error = "Không nhận đuợc ô submit";
+                     returnURL('Admin/design/Post/create.php', compact('error'));
                  }
              }
 
@@ -69,19 +69,17 @@
             $db = new Post();
 
             try {
-            $db->updatePost($data, $id);
-            $posts = $db->getPost();
-            $success = "Đã sửa post thành công";
-            loadView("Admin/design/Post/index.php", compact('posts', ['success' => 'success']));
+                $db->updatePost($data, $id);
+                $success = "Đã sửa post thành công";
+                redirect("Admin/post/index", compact('success'));
             }catch (\Exception $e){
-                $post = $db->getOnePost($id);
-                loadView("Admin/design/Post/edit.php", compact('post' ,['error' => $e->getMessage()]));
+                $error = "Đã xảy ra lỗi";
+                returnURL("Admin/post/edit", compact('error'));
             }
         }else {
             $db = new Post();
-            $post = $db->getOnePost($id);
             $error = 'Đã xảy ra lỗi về submit form';
-            loadView("Admin/design/Post/edit.php", compact('post' ,['error' => 'error']));
+            returnURL("Admin/post/edit", compact('error'));
         }
         }
 
@@ -89,13 +87,11 @@
         $db = new Post();
         try {
             $db->deletePost($id);
-            $posts = $db->getPost();
             $success = 'Đã xóa post thành công';
-            loadView('Admin/design/Post/index.php', compact('posts' ,['success' => 'success']));
+            redirect('Admin/post/index', compact('success'));
         }catch (Exception $e) {
-            $posts = $db->getPost();
             $error = 'Đã xảy ra lỗi';
-            loadView('Admin/design/Post/index.php',  compact('posts' ,['error' => 'error']));
+            returnURL('Admin/post/index',  compact('error'));
         }
     }
  }
