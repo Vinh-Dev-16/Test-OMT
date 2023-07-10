@@ -1,12 +1,10 @@
-<head>
+<?php
+    $titlePage = "Tạo mới post";
+    require_once VIEW.'Admin/design/Navbar.php';
+?>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" >
-    <title>Create Post</title>
-</head>
-
-<body>
     <br>
-    <div class="container">
+    <div class="container-fluid main-admin">
         <nav aria-label="breadcrumb ml-2">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php url('User/home/home'); ?>">Home</a></li>
@@ -46,5 +44,7 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" ></script>
-</body>
+
+<?php
+require_once VIEW.'Admin/design/Footer.php';
+?>

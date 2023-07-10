@@ -1,12 +1,10 @@
-
 <?php
-    include VIEW.'User/layout.php';
-
-    const link_CSS = '';
+$titlePage = "Sửa post";
+require_once VIEW.'Admin/design/Navbar.php';
 ?>
 
 <br>
-<div class="container">
+<div class="container main-admin">
     <nav aria-label="breadcrumb ml-2">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php url('User/home/home'); ?>">Home</a></li>
@@ -48,3 +46,7 @@
         </div>
     </div>
 </div>
+
+<?php
+require_once VIEW.'Admin/design/Footer.php';
+?>

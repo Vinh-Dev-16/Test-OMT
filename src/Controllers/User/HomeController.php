@@ -4,8 +4,8 @@ namespace Thinkpad\Omt\Controllers\User;
 
 class HomeController
 {
-    public function home()
+    public function index()
     {
-
+        view('User/design/home.php');
     }
 }

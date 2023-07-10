@@ -10,7 +10,7 @@ const CONTROLLER = SRC . 'Controllers' . DS;
 const CONFIG = SRC . 'Config' . DS;
 const HELPER = SRC . 'Helpers' . DS;
 const MODEL = SRC . 'Models' . DS;
-const PUBLIC_SRC = SRC . 'Public' . DS;
+const PUBLIC_SRC = SRC . 'public' . DS;
 const VIEW = SRC . 'Views' . DS;
 
 

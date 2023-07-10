@@ -50,8 +50,10 @@ function returnURL($url, $params ,$statusCode = 303 )
 
 function loadView($path, $params)
 {
+    ob_start();
     extract($params);
     require_once 'src/Views/' . $path;
+    ob_end_flush();
 }
 
 
