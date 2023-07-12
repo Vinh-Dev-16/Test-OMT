@@ -15,9 +15,9 @@ class User extends DB
 
     public function findUser($name) {
         echo $name;
-        $sql = 'SELECT * FROM users WHERE name = :name'  ;
+        $sql = 'SELECT * FROM users WHERE name = ?';
         $statement = $this->pdo->prepare($sql);
-        $statement->bindParam(':name', $name, PDO::PARAM_INT);
+        $statement->bindParam(1, $name);
         $statement->execute();
 
         return $statement->fetch(PDO::FETCH_OBJ);
@@ -38,29 +38,22 @@ class User extends DB
 
 
 
-    public function checkName($name): bool
+    public function checkName($name)
     {
-        $checkName  = "Select name from users where name = ?";
-        $resultName = $this->pdo->prepare($checkName);
-        $resultName->bindParam(1, $name, PDO::PARAM_INT);
-        $resultName->execute();
-        if(empty($resultName->fetch(PDO::FETCH_OBJ))) {
-            return false;
-        }else {
-            return true;
-        }
+
+            $checkName  = "Select count(*) from users where name = ?";
+            $resultName = $this->pdo->prepare($checkName);
+            $resultName->bindParam(1, $name);
+            $resultName->execute();
+            return $resultName->fetchColumn();
     }
 
-    public function checkEmail($email): bool
+    public function checkEmail($email)
     {
-        $checkEmail  = "Select 1 from users where email = ?";
+        $checkEmail  = "Select count(*) from users where email = ?";
         $resultEmail = $this->pdo->prepare($checkEmail);
-        $resultEmail->bindParam(1, $email, PDO::PARAM_INT);
+        $resultEmail->bindParam(1, $email);
         $resultEmail->execute();
-        if(empty($resultEmail->fetch(PDO::FETCH_OBJ))) {
-            return false;
-        }else {
-            return true;
-        }
+        return $resultEmail->fetchColumn();
     }
 }

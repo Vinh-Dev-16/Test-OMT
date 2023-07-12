@@ -1,4 +1,4 @@
-<div class="container main-admin">
+<div class="container main-admin mt-2">
     <footer class="main-footer position-fixed bottom-0 mb-2">
         <strong>Copyright &copy; 2023 <a href="<?php url('Admin/dashboard/index'); ?>">NEWS</a>.</strong>
         All rights reserved.

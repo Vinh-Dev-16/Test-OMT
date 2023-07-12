@@ -144,3 +144,52 @@
 .title-content-main {
     font-size: 16px !important;
 }
+
+.right-title-content {
+    font-size: 12px !important;
+    transition: 0.25s;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+.right-title-content:hover {
+    opacity: .75;
+}
+
+.horizon-main {
+    border: 0.1em solid gray !important;
+}
+.horizon-main:after {
+    width: 20%;
+    color: red;
+}
+
+/*footer*/
+
+footer {
+    background-color: #222;
+    min-height: 200px;
+}
+
+.horizon-footer {
+    border: 1px solid red;
+    width: 100%;
+
+}
+
+.content-left-footer {
+    font-size: 13px;
+    color: #eeeeee;
+}
+.content-left-footer p{
+    margin-bottom: 0 !important;
+}
+
+.content-left-footer p span {
+    color: red;
+}
+.advertise-footer {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}

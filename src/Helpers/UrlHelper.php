@@ -32,7 +32,6 @@ function returnURL($url, $params ,$statusCode = 303 )
     extract($params);
     if (isset($_SESSION['error'])){
         session_unset();
-
         session_destroy();
 
         foreach ($params as $key => $value){

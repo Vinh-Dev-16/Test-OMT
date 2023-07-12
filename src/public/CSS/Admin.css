@@ -42,7 +42,7 @@
     transition: .25s ease-in;
 }
 .sidebar-menu-item a:hover {
-    opacity: .8;
+    opacity: .6;
 }
 
 .sidebar-menu-item.active a{
@@ -69,8 +69,8 @@
 /*main admin*/
 
 .main-admin{
-    margin-left: 16em;
-    width: calc(100% - 16em);
+    margin-left: 16em !important;
+    width: calc(100% - 16em) !important;
 }
 
 #myTable_wrapper {

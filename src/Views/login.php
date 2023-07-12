@@ -21,20 +21,28 @@
                         <?php
                         if(isset($_SESSION['message'])):
                             ?>
-                            <h3 class="alert alert-danger text-center"><?php echo $_SESSION['message']?></h3>
+                            <h3 class="alert alert-success text-center"><?php echo $_SESSION['message']?></h3>
                         <?php endif;
 
                             session_unset();
-                            session_destroy();
+
+                        ?>
+                        <?php
+                        if(isset($_SESSION['error'])):
+                            ?>
+                            <h3 class="alert alert-danger text-center"><?php echo $_SESSION['error']?></h3>
+                        <?php endif;
+
+                        session_unset();
+                        session_destroy();
                         ?>
 
-
-<!--                        --><?php
-//                        if(isset($error)):
-//                            ?>
-<!--                            <h3 class="alert alert-danger text-center">--><?php //echo $error?><!--</h3>-->
-<!--                        --><?php //endif;
-//                        ?>
+                        <?php
+                        if(isset($error)):
+                            ?>
+                            <h3 class="alert alert-danger text-center"><?php echo $error ?></h3>
+                        <?php endif;
+                       ?>
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Đăng Nhập</p>

@@ -35,14 +35,16 @@ require_once VIEW.'Admin/design/Navbar.php';
         <?php endif; ?>
 
 
-        <a class="mb-2 mt-2" href="<?php url('Admin/post/create'); ?>"> Tạo mới bài đăng</a>
+        <a class="mb-2 mt-2 btn btn-info btn-rounded" href="<?php url('Admin/post/create'); ?>"> Tạo mới bài đăng</a>
 
         <table class="table table-striped display mt-3" id="myTable" >
         <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Title</th>
-            <th scope="col">Content</th>
+            <th  scope="col">Content</th>
+            <th  scope="col">Category</th>
+            <th  scope="col">Tác giả</th>
             <th scope="col">Thao tác</th>
         </tr>
         </thead>
@@ -50,12 +52,13 @@ require_once VIEW.'Admin/design/Navbar.php';
         <?php foreach ($posts as $post): ?>
         <tr>
             <th scope="row"><?php echo $post->id ?></th>
-            <td><?php echo $post->title ?></td>
+            <td><?php echo mb_substr($post->title , 0,30)?></td>
             <td><?php echo mb_substr($post->content , 0,30)  ?></td>
+            <td><?php echo $post->category_name ?></td>
+            <td><?php echo $post->author ?></td>
             <td>
-                <a href="<?php url('Admin/post/edit/' . $post->id); ?>">Sửa</a>
-                <br>
-                <a href="<?php url('Admin/post/delete/' . $post->id) ; ?>">Xóa</a>
+                <a class=" btn btn-secondary btn-rounded" href="<?php url('Admin/post/edit/' . $post->id); ?>">Sửa</a>
+                <a onclick="return confirm('Bạn muốn xóa chứ?')" class="ms-3 btn btn-danger btn-rounded" href="<?php url('Admin/post/delete/' . $post->id) ; ?>">Xóa</a>
             </td>
         </tr>
         <?php endforeach; ?>

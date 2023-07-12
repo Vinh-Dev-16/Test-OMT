@@ -2,9 +2,10 @@
 
 
 if (!(isset($_SESSION['user']))){
-    redirect('User/auth/login', ['message' => 'Bạn cần phải đăng nhập']);
+    returnURL('User/auth/login', ['error' => 'Bạn cần phải đăng nhập']);
 }
 ?>
+
 
 
 <!doctype html>
@@ -55,6 +56,11 @@ if (!(isset($_SESSION['user']))){
                            </a>
                        </li>
                        <li class="sidebar-dropdown-menu-item">
+                           <a href="<?php url('Admin/category/index'); ?>">
+                               List Category
+                           </a>
+                       </li>
+                       <li class="sidebar-dropdown-menu-item">
                            <a href="<?php url('Admin/user/index'); ?>">
                                List User
                            </a>
@@ -63,7 +69,7 @@ if (!(isset($_SESSION['user']))){
                </li>
                <li class="sidebar-menu-item">
                    <a href="<?php url('User/auth/doLogOut'); ?>">
-                       <svg class="mb-1 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M17 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H7V0H9V2H15V0H17V2ZM17 4V6H15V4H9V6H7V4H5V20H19V4H17ZM7 8H17V10H7V8ZM7 12H17V14H7V12Z"></path></svg>
+                       <svg class="mb-1 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M4 18H6V20H18V4H6V6H4V3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V18ZM6 11H13V13H6V16L1 12L6 8V11Z"></path></svg>
                        Logout
                    </a>
                </li>
