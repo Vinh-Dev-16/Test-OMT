@@ -44,7 +44,7 @@
                 </p>
             </div>
             <div class="col-md-6">
-                <div class="ms-10">
+                <div class="right-content-footer">
                 <img src="https://vccorp.mediacdn.vn/vccorp-m.png" alt="logo vccorp">
                 <h4 class="advertise-footer mt-3">Liên hệ quảng cáo</h4>
                     <p style="color:#eeeeee; font-size: 13px;">

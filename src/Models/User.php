@@ -13,6 +13,13 @@ class User extends DB
         return $result->fetchAll();
     }
 
+    public function getOneUser($id) {
+        $sql = 'SELECT * FROM users WHERE id =' . $id;
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
     public function findUser($name) {
         echo $name;
         $sql = 'SELECT * FROM users WHERE name = ?';
@@ -55,5 +62,16 @@ class User extends DB
         $resultEmail->bindParam(1, $email);
         $resultEmail->execute();
         return $resultEmail->fetchColumn();
+    }
+
+
+    public function updateRoleUser($id , $data) {
+        $sql = "UPDATE users SET role = :role WHERE id = " . $id;
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute(
+            [
+                ':role' => $data['role'],
+            ]
+        );
     }
 }

@@ -17,4 +17,12 @@ class HomeController
         $postWithMovie = $database->getPostWithCategory(3,2);
         loadView('User/design/home.php', compact('categories','postWithMobile', 'postWithMovie'));
     }
+
+    public function detail($id) {
+        $db = new Post();
+        $post = $db->getOnePost($id);
+        $database = new Category();
+        $categories = $database->getLimitCategory(8);
+        loadView('User/design/detail.php', compact('post', 'categories'));
+    }
 }

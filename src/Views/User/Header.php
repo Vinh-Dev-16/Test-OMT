@@ -29,7 +29,7 @@
                 <div class="row">
                      <div class="middle-navbar-item-logo mt-3 col-md-2">
                         <svg class="ms-2 mt-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"><path d="M12 3.09747L7.05025 8.04722C4.31658 10.7809 4.31658 15.213 7.05025 17.9467C9.78392 20.6804 14.2161 20.6804 16.9497 17.9467C19.6834 15.213 19.6834 10.7809 16.9497 8.04722L12 3.09747ZM12 0.269043L18.364 6.633C21.8787 10.1477 21.8787 15.8462 18.364 19.3609C14.8492 22.8756 9.15076 22.8756 5.63604 19.3609C2.12132 15.8462 2.12132 10.1477 5.63604 6.633L12 0.269043ZM7 12.997H17C17 15.7584 14.7614 17.997 12 17.997C9.23858 17.997 7 15.7584 7 12.997Z" fill="rgba(100,205,138,1)"></path></svg>
-                        <a href="#" style="color: #4cc170; margin-top: 10px !important;" class="sidebar-logo mt-4 ms-1 text-uppercase fw-bold text-decoration-none fs-3 text-bs-indigo">NEWS</a>
+                        <a href="<?php url('User/home/index'); ?>" style="color: #4cc170; margin-top: 10px !important;" class="sidebar-logo mt-4 ms-1 text-uppercase fw-bold text-decoration-none fs-3 text-bs-indigo">NEWS</a>
                       </div>
                      <div class="col-md-5 mt-3">
                          <div class="trending-icon">
@@ -74,12 +74,6 @@
                              <div class="position-absolute end-navbar-dropdown">
                                 <div class="container d-flex justify-content-center align-items-center gap-2">
                                     <p>aaaaDĐ</p>
-                                    <p>aaaaDĐ</p>
-                                    <p>aaaaDĐ</p>
-                                    <p>aaaaDĐ</p>
-                                    <p>aaaaDĐ</p>
-                                    <p>aaaaDĐ</p>
-                                    <p>aaaaDĐ</p>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +81,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 

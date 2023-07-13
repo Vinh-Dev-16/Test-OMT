@@ -7,6 +7,9 @@
     font-family: 'Roboto', sans-serif !important;
 }
 
+body {
+    background-color: #e7e7e7 !important;
+}
 .header-home {
     background-color: #2e2e2e !important;
 }
@@ -187,9 +190,51 @@ footer {
 .content-left-footer p span {
     color: red;
 }
+.right-content-footer {
+    margin-left: 40px !important;
+}
 .advertise-footer {
     color: white;
     text-transform: uppercase;
     font-weight: 600;
 
 }
+.breadcrumb {
+    padding: 15px !important;
+}
+/*Detail*/
+main {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+.detail-main {
+    min-height: 200px;
+    background-color: white;
+    margin-left: 10% !important;
+    width: 80% !important;
+}
+.detail-main-content-title h2 {
+    font-weight: 600 !important;
+    font-size: 30px !important;
+}
+
+@media screen and (max-width: 576px) {
+    .category-movie, .notable, .right-content-main {
+        width: 60% !important;
+        margin-left: 20% !important;
+    }
+    .right-content-footer {
+        margin-left: 0 !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #search-navbar {
+        top: 5px !important;
+        z-index: 100;
+    }
+    #input-search-navbar {
+        top: 5px !important;
+    }
+}
+

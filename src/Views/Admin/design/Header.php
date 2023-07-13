@@ -1,5 +1,5 @@
 <header class="bg-surface-primary border-bottom mt-2 pt-6 mb-4">
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
         <div class="mb-npx">
             <div class="row align-items-center">
                 <div class="col-sm-6 col-12 mb-4 mb-sm-0">

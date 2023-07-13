@@ -1,5 +1,5 @@
 <div class="container main-admin mt-2">
-    <footer class="main-footer position-fixed bottom-0 mb-2">
+    <footer class="main-footer bottom-0 mb-2">
         <strong>Copyright &copy; 2023 <a href="<?php url('Admin/dashboard/index'); ?>">NEWS</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
@@ -16,12 +16,34 @@
     $(document).ready(function() {
 
         $('.sidebar-dropdown-menu').slideUp('fast');
-        $('.sidebar-menu-item.has-dropdown > a ').click(function(e) {
+        $('.has-dropdown > a ').click(function(e) {
             e.preventDefault();
 
             $(this).next().slideToggle('fast');
+            $(this).parent().toggleClass('focused');
+        })
+        $('.sidebar-toggle').click(function() {
+            $('.sidebar').toggleClass('collapsed')
+            $('.main-admin').toggleClass('active');
+
+            $('.sidebar.collapsed').mouseleave(function() {
+                // $('.main-admin').toggleClass('active');
+                $('.sidebar-dropdown-menu').slideUp('fast')
+                $('.sidebar-menu-item.has-dropdown, .sidebar-dropdown-menu-item.has-dropdown').removeClass('focused')
+            })
         })
 
+        $('.sidebar-overlay').click(function() {
+            $('.sidebar').addClass('collapsed');
+            $('.main-admin').addClass('active');
+            $('.sidebar-dropdown-menu').slideUp('fast')
+            $('.sidebar-menu-item.has-dropdown, .sidebar-dropdown-menu-item.has-dropdown').removeClass('focused')
+        })
+
+        if(window.innerWidth < 768) {
+            $('.sidebar').addClass('collapsed');
+            $('.main-admin').addClass('active');
+        }
     })
 
     let table = new DataTable('#myTable', {

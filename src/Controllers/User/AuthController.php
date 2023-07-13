@@ -92,4 +92,41 @@ class AuthController
         unset($_SESSION['user']);
         redirect('User/auth/login',['message' => 'Đã logout']);
     }
+
+
+    public function index() {
+        $db= new User();
+        $users =  $db->getUsers();
+        loadView('Admin/design/User/index.php' , compact('users'));
+    }
+
+    public function edit($id) {
+        $db= new User();
+        $users = $db->getOneUser($id);
+        loadView('Admin/design/User/edit.php', compact('users'));
+    }
+
+    public function update ($id) {
+        if (isset($_POST['submit'])) {
+            if (empty ($_POST['role'])) {
+                $role = "Không tìm thấy trường này";
+                loadView('Admin/design/User/edit.php', compact('role'));
+            }else {
+                $role = $_POST['role'];
+                $data  = array('role' => $role);
+                $db = new User();
+                try {
+                    $db->updateRoleUser($id , $data);
+                    $success = "Đã sửa role user thành công";
+                    redirect("User/auth/index", compact('success'));
+                }catch (\Exception $e){
+                    $error = "Đã xảy ra lỗi";
+                    returnURL("User/auth/edit", compact('error'));
+                }
+            }
+        } else {
+            $error = 'Đã xảy ra lỗi về submit form';
+            returnURL("User/auth/edit", compact('error'));
+        }
+    }
 }
